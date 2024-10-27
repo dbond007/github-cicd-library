@@ -1,0 +1,11 @@
+# Example .ansible-lint configuration
+skip_list:
+  - 'role-name'   # Skip specific rule
+  - 'yaml'        # Skip YAML syntax check
+
+warn_list:
+  - 'deprecated'  # Warn on deprecated syntax
+
+# Exclude specific files or directories
+exclude_paths:
+  - "tests/"

@@ -1,24 +1,24 @@
 ---
 
 name: "Ansible Lint Action"
-description: "Run Ansible Lint on playbooks"
+description: "Installs Ansible and runs Ansible Lint on code"
 inputs:
   ansible_version:
-    description: "Specify Ansible version"
+    description: "Version of Ansible to install"
     required: false
     default: "latest"
   python_version:
-    description: "Specify Python version"
+    description: "Python version to install"
     required: false
     default: "3.9"
-
+    
 runs:
   using: "composite"
   steps:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: "${{ inputs.python_version }}"
+        python-version: ${{ inputs.python_version }}
 
     - name: Install Ansible and Ansible Lint
       shell: bash
@@ -28,4 +28,4 @@ runs:
 
     - name: Run Ansible Lint
       shell: bash
-      run: ansible-lint
+      run: ansible-lint .

@@ -6,11 +6,11 @@ inputs:
   ansible_version:
     description: "Version of Ansible to install"
     required: false
-    default: "latest"
+    default: '2.17'
   python_version:
     description: "Python version to install"
     required: false
-    default: "3.9"
+    default: '3.10'
     
 runs:
   using: "composite"
